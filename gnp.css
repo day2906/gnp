@@ -107,3 +107,29 @@ body {
 .social-icons img:hover {
   transform: scale(1.15);
 }
+
+/* giro */
+
+.expandable-card .extra-text {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease, border-top 0.3s ease;
+  padding: 0;
+  color: #333;
+  border-top: none;
+  margin-top: 0;
+}
+
+.expandable-card.expanded .extra-text {
+  max-height: 500px;
+  padding-top: 10px;
+  border-top: 2px solid #ffb300;
+  margin-top: 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .insurance-cards {
+    grid-template-columns: 1fr;
+  }
+}
