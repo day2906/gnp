@@ -24,34 +24,61 @@
       <br>
 
       <div class="insurance-cards">
-      <div class="card">
-      <i class="fas fa-piggy-bank" style="font-size: 40px; color: #fc6e12;"></i> 
-      <div style="padding: 12px;">Plan Personal de Retiro</div>
-      </div>
+      <div class="card expandable-card">
+  <i class="fas fa-piggy-bank" style="font-size: 40px; color: #fc6e12;"></i> 
+  <div style="padding: 12px;">Plan Personal de Retiro</div>
+  <div class="extra-text">
+    Un plan personalizado para asegurar tu tranquilidad financiera a largo plazo. 
+    Aportaciones periódicas + beneficios fiscales. 
+    Ideal para diseñar un retiro sólido y seguro.
+  </div>
+</div>
 
-      <div class="card">
+
+
+      <div class="card expandable-card">
         <img src="https://img.icons8.com/ios-filled/50/fc6e12/hospital.png" alt="GMM">
         <div>Gastos Médicos Mayores</div>
+        <div class="extra-text">
+    Protección médica integral ante eventualidades de salud que generen gastos elevados. 
+    Cobertura hospitalaria, tratamientos, cirugías y más, sin comprometer tu patrimonio.
+  </div>
       </div>
 
-      <div class="card">
+      <div class="card expandable-card">
         <img src="https://img.icons8.com/ios-filled/50/fc6e12/car.png" alt="Auto">
         <div>Auto</div>
+        <div class="extra-text">
+    Seguridad vial en cada trayecto: cobertura amplia, asistencia en carretera 24/7 y protección ante terceros. 
+    Tu auto, bien resguardado.
+  </div>
       </div>
 
-      <div class="card">
+      <div class="card expandable-card">
         <img src="https://img.icons8.com/ios-filled/50/fc6e12/home.png" alt="Hogar">
         <div>Hogar</div>
+        <div class="extra-text">
+    Protege tu patrimonio y tu tranquilidad: cobertura contra daños, robos, fenómenos naturales y responsabilidad civil. 
+    Tu hogar, siempre protegido.
+  </div>
       </div>
 
-      <div class="card">
+      <div class="card expandable-card">
         <img src="https://img.icons8.com/ios-filled/50/fc6e12/pet-commands-summon.png" alt="Mascotas">
         <div>Mascotas</div>
+        <div class="extra-text">
+    Pensado para su bienestar: cobertura médica veterinaria, cirugías, responsabilidad civil y asistencia en caso de extravío. 
+    Amor y salud para tu compañero y miembro de la familia.
+  </div>
       </div>
 
-      <div class="card">
+      <div class="card expandable-card">
         <img src="https://img.icons8.com/ios-filled/50/fc6e12/briefcase.png" alt="Empresarial">
         <div>Empresarial</div>
+        <div class="extra-text">
+    Cobertura diseñada para tu empresa: protección patrimonial, responsabilidad civil y asistencia legal. 
+    Tu negocio respaldado frente a imprevistos.
+  </div>
       </div>
     </div>
 
@@ -75,11 +102,32 @@
 
   <div style="margin-top: 50px; text-align: center; font-size: 13px; color: #777;">
   <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;">
-  <p>Sitio desarrollado por <strong>Ángel Martínez</strong></p>
+  <p>Sitio desarrollado por <strong>A. Dayán Martínez</strong></p>
   <p style="margin-top: 5px;">
     ¿Quieres una página como esta? <a href="https://wa.me/525578946247" target="_blank" style="color: #fc6e12; font-weight: bold; text-decoration: none;">Contáctame aquí</a>
   </p>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll('.expandable-card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', function (e) {
+      let clickedCard = e.target.closest('.expandable-card');
+      if (!clickedCard) return;
+
+      cards.forEach(c => {
+        if (c !== clickedCard) c.classList.remove('expanded');
+      });
+
+      clickedCard.classList.toggle('expanded');
+    });
+  });
+});
+
+
+</script>
 
 
 </body>
